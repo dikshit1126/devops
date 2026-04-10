@@ -3,7 +3,7 @@
 ## CO2: Version Control and Collaboration
 
 - Use `main`, `develop`, and `feature/*` branches
-- Make meaningful commits for app, Docker, CI/CD, Kubernetes, and Terraform work
+- Make meaningful commits for app, Docker, CI/CD, and Terraform work
 - Use pull requests with the included template
 - Add collaborators and request reviews in GitHub
 
@@ -17,11 +17,11 @@
 
 - Dockerfile containerizes the app
 - Docker Compose supports local execution
-- Kubernetes manifests define namespace, deployment, service, and autoscaling
+- Terraform automates deployment resources such as namespace, deployment, and service
 
 ## CO5: Infrastructure as Code
 
-- Terraform provisions Kubernetes resources in a repeatable way
+- Terraform provisions infrastructure and deployment resources in a repeatable way
 - Infrastructure definitions can be versioned and reviewed like application code
 
 ## How to Maximize Marks
@@ -30,4 +30,4 @@
 - Make at least 6 to 10 clean commits instead of one large commit
 - Push to GitHub and show pull request history
 - Replace placeholder usernames and registry values
-- Capture screenshots of Actions runs, container build, and Kubernetes pods
+- Capture screenshots of Actions runs, container build, and Terraform execution

@@ -1,0 +1,2 @@
+app_image       = "ghcr.io/dikshit1126/devops:latest"
+kubeconfig_path = "~/.kube/config"

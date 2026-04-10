@@ -68,13 +68,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up kubectl
-        uses: azure/setup-kubectl@v4
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
 
       - name: Configure kubeconfig
         run: |
           mkdir -p ~/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > ~/.kube/config
 
-      - name: Deploy manifests
-        run: kubectl apply -f kubernetes/
+      - name: Terraform init
+        working-directory: terraform
+        run: terraform init
+
+      - name: Terraform validate
+        working-directory: terraform
+        run: terraform validate
+
+      - name: Terraform plan
+        working-directory: terraform
+        run: terraform plan -var="app_image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
+
+      - name: Terraform apply
+        working-directory: terraform
+        run: terraform apply -auto-approve -var="app_image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"

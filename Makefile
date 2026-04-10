@@ -13,11 +13,14 @@ docker-build:
 docker-run:
 	docker run -p 3000:3000 devops-showcase-app:local
 
-k8s-apply:
-	kubectl apply -f kubernetes/
-
 terraform-init:
 	cd terraform && terraform init
+
+terraform-validate:
+	cd terraform && terraform validate
+
+terraform-plan:
+	cd terraform && terraform plan
 
 terraform-apply:
 	cd terraform && terraform apply
