@@ -1,0 +1,22 @@
+{
+  "name": "devops-showcase-app",
+  "version": "1.0.0",
+  "description": "A rubric-aligned DevOps showcase project with CI/CD, Docker, Kubernetes, and Terraform.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "build": "node scripts/build-info.js",
+    "ci": "npm run build && npm test"
+  },
+  "keywords": [
+    "devops",
+    "docker",
+    "kubernetes",
+    "terraform",
+    "ci-cd"
+  ],
+  "author": "",
+  "license": "MIT"
+}
