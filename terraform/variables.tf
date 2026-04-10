@@ -7,5 +7,5 @@ variable "kubeconfig_path" {
 variable "app_image" {
   description = "Container image to deploy."
   type        = string
-  default     = "ghcr.io/your-username/devops-showcase-app:latest"
+  default     = "ghcr.io/dikshit8822/devops:latest"
 }
