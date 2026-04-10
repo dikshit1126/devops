@@ -1,7 +1,11 @@
-output "namespace" {
-  value = kubernetes_namespace.showcase.metadata[0].name
+output "container_name" {
+  value = docker_container.showcase_app.name
 }
 
-output "service_name" {
-  value = kubernetes_service_v1.showcase_service.metadata[0].name
+output "app_url" {
+  value = "http://localhost:${var.external_port}"
+}
+
+output "image_name" {
+  value = docker_image.showcase_app.name
 }

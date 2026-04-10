@@ -1,2 +1,5 @@
-app_image       = "ghcr.io/dikshit1126/devops:latest"
-kubeconfig_path = "~/.kube/config"
+docker_host    = "unix:///Users/dikshit/.docker/run/docker.sock"
+app_image      = "devops-showcase-app:terraform"
+container_name = "devops-showcase-app"
+internal_port  = 3000
+external_port  = 3000

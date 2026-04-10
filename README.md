@@ -5,7 +5,7 @@ This project is designed to score strongly against a DevOps course rubric. It in
 - Version control and collaboration guidance
 - Automated CI/CD with GitHub Actions
 - Docker-based containerization
-- Terraform-based deployment automation
+- Terraform-based Docker deployment automation
 - Terraform-based Infrastructure as Code
 
 ## Project Overview
@@ -45,17 +45,17 @@ docker compose up --build
 
 ## Terraform Automation
 
-Terraform is the primary deployment method in this project. It provisions the namespace, config map, deployment, and service in the Kubernetes cluster from code:
+Terraform is the primary deployment method in this project. It uses the Docker provider to build the application image from the local source code and run the container automatically.
 
 ```bash
 cd terraform
 terraform init
 terraform validate
-terraform plan -var="app_image=ghcr.io/dikshit1126/devops:latest"
-terraform apply -var="app_image=ghcr.io/dikshit1126/devops:latest"
+terraform plan
+terraform apply
 ```
 
-If your final GitHub repo name differs, update the image in [terraform/variables.tf](/Users/dikshit/Desktop/devops/terraform/variables.tf) or pass a different value with `-var`.
+If Docker Desktop is running, Terraform will create a local container and expose the app on `http://localhost:3000`.
 
 ## CI/CD Workflow
 
@@ -63,7 +63,7 @@ The GitHub Actions workflow in `.github/workflows/ci-cd.yml` has three automated
 
 1. Build and test the application
 2. Build and push the Docker image
-3. Deploy infrastructure and application changes using Terraform on pushes to `main`
+3. Deploy the container automatically using Terraform on pushes to `main`
 
 ## Collaboration Workflow
 
@@ -87,6 +87,6 @@ Recommended Git process:
 1. Show commit history and branching strategy
 2. Run `npm test`
 3. Build the Docker image
-4. Explain the Terraform resources and variables
+4. Explain the Terraform Docker resources and variables
 5. Show how CI/CD applies Terraform automatically
 6. Walk through the GitHub Actions pipeline
