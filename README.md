@@ -45,7 +45,7 @@ docker compose up --build
 
 ## Kubernetes Deployment
 
-The default image is set to `ghcr.io/dikshit8822/devops:latest`. If your final GitHub repo name differs, update the image in `kubernetes/deployment.yaml` and `terraform/variables.tf`, then apply:
+The default image is set to `ghcr.io/dikshit1126/devops:latest`. If your final GitHub repo name differs, update the image in `kubernetes/deployment.yaml` and `terraform/variables.tf`, then apply:
 
 ```bash
 kubectl apply -f kubernetes/
@@ -58,7 +58,7 @@ Terraform provisions the namespace, config map, deployment, and service in your 
 ```bash
 cd terraform
 terraform init
-terraform apply -var="app_image=ghcr.io/dikshit8822/devops:latest"
+terraform apply -var="app_image=ghcr.io/dikshit1126/devops:latest"
 ```
 
 ## CI/CD Workflow
