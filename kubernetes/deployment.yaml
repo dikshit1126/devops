@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: showcase-app
-          image: ghcr.io/your-username/devops-showcase-app:latest
+          image: ghcr.io/dikshit1126/devops:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
